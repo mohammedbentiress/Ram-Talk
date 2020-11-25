@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/username"
+        android:title="Update username" />
+    <item
+        android:id="@+id/pwd"
+        android:title="update password" />
+    <item
+        android:id="@+id/deco"
+        android:title="déconnection" />
+</menu>

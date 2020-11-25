@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap');
+
+:root {
+  --primary: #c20831;
+  --primary-hover: #c43d5a;
+  --secondary: #ffffff;
+  --btn-shadow: -1px 2px 3px rgba(195, 8, 48, 0.5);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  /* position: fixed;
+  z-index: 999; */
+  width: 100%;
+  padding: 1rem;
+}
+
+.logo {
+  width: 5rem;
+}
+
+.headd {
+  background: var(--primary);
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: var(--btn-shadow);
+  transition: transform 0.3s ease-in-out;
+}
+
+.headd a img {
+  width: 20px;
+  transform: rotate(180deg);
+}
+
+.title {
+  text-align: center;
+}
+
+h1 {
+  background: #e7a7b5;
+  display: inline-block;
+  color: var(--secondary);
+  padding: 10px;
+  margin: 1.5rem 0;
+}
+
+form {
+  padding: 2em;
+  width: 85%;
+  margin: auto;
+  margin-bottom: 2rem;
+  box-shadow: -1px 3px 15px rgba(0, 0, 0, 0.16);
+  display: grid;
+  grid-gap: 1em;
+  justify-content: center;
+}
+
+form .control {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+label {
+  display: block;
+  color: #c43d5a;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
+  padding: 10px 1.5rem 10px 8px;
+  width: 100%;
+  border: none;
+  box-shadow: -1px 3px 15px rgba(0, 0, 0, 0.16);
+  margin-top: 5px;
+}
+
+input[type='submit'] {
+  background: linear-gradient(45deg, #e77b92, #c43d5a);
+  border: none;
+  outline: none;
+  color: var(--secondary);
+  padding: 10px 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: var(--btn-shadow);
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type='submit']:hover,
+.headd:hover {
+  transform: translateY(-4px);
+}
+
+@media only screen and (min-width: 700px) {
+  form .fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+
+  form .control-sub {
+    text-align: center;
+  }
+
+  input[type='submit'] {
+    padding: 15px 3rem;
+  }
+}

@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap');
+
+:root {
+  --primary: #c20831;
+  --primary-hover: #c43d5a;
+  --secondary: #ffffff;
+  --btn-shadow: -1px 2px 3px rgba(195, 8, 48, 0.5);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.logo {
+  width: 5rem;
+  margin: 1rem;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  width: 80%;
+  height: 75%;
+  margin-top: 5%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+  padding: 1.5rem;
+  margin: 6rem 0;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 2.5rem auto;
+  padding: 0;
+}
+
+td,
+th {
+  padding: 15px;
+  border-right: 1px solid #999;
+  color: #707070;
+}
+
+td:last-child,
+th:last-child {
+  border-right: none;
+}
+
+td {
+  border-top: 1px solid #999;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+td a {
+  background: var(--primary);
+  padding: 1rem;
+  padding-bottom: 0.25rem;
+
+  /* Style 1 button */
+  border-radius: 20px;
+
+  /* Style 2 button */
+  /* border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px; */
+}
+
+.add-container {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: sticky;
+}
+
+.add {
+  background: var(--primary);
+  align-self: center;
+  justify-self: center;
+  padding: 1rem 4rem;
+
+  /* Style 1 button */
+  border-radius: 50px;
+
+  /* Style 2 button */
+  /* border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px; */
+}
+
+.add span {
+  font-size: 1.2rem;
+}
+
+td a,
+.add {
+  transition: background 0.2s ease-in-out;
+  box-shadow: var(--btn-shadow);
+}
+
+td a:hover,
+.add:hover {
+  background: var(--primary-hover);
+}
+
+.headd {
+  background: var(--primary);
+  overflow: hidden;
+  clip-path: circle(17% at 100% 0);
+  position: fixed;
+  right: 0;
+  height: 60%;
+  width: 25%;
+  transition: clip-path 0.4s ease-in-out;
+}
+
+.burger-container {
+  cursor: pointer;
+  float: right;
+  height: 24px;
+  width: 25px;
+  z-index: 1500;
+  margin: 18px 12px 0 0;
+  filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}
+
+.burger-container:hover + .headd,
+.headd:hover {
+  clip-path: circle(75% at 100% 0);
+}
+
+.burger-container .burger {
+  width: 25px;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 3px;
+  position: relative;
+}
+
+.burger-container .burger::before,
+.burger-container .burger::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: var(--secondary);
+  border-radius: 3px;
+  display: block;
+  position: absolute;
+  left: 0;
+}
+
+.burger-container .burger::before {
+  top: -6px;
+}
+
+.burger-container .burger::after {
+  top: 6px;
+}
+
+.headd ul {
+  list-style: none;
+  margin-left: 30%;
+  margin-top: 3rem;
+}
+
+.headd ul li {
+  display: inline-block;
+  padding: 5px 9px;
+  margin: 0.4rem 0;
+}
+
+.headd ul li:nth-child(2) {
+  margin-left: 10%;
+}
+
+.headd ul li:nth-child(3) {
+  margin-left: 35%;
+}
+
+.headd ul li::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: var(--secondary);
+  display: block;
+  border-radius: 3px;
+  margin-top: 4px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.headd ul li:hover::after {
+  transform: scaleX(1);
+}

@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap');
+
+:root {
+  --primary: #c20831;
+  --secondary: #ffffff;
+  --btn-shadow: -1px 2px 3px rgba(195, 8, 48, 0.5);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  display: grid;
+  grid-template-rows: 1fr 0.5fr 2.5fr;
+  height: 100vh;
+}
+
+header {
+  background-color: rgba(196, 61, 90, 0.89);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+
+header img {
+  width: 30%;
+}
+
+h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  text-align: center;
+  align-self: center;
+  font-weight: 700;
+  letter-spacing: 10;
+  font-family: 'Montserrat', sans-serif;
+}
+
+form {
+  justify-self: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  width: 100%;
+}
+
+.control {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.control .user-icon {
+  padding: 1rem;
+  box-shadow: -1px 3px 15px rgba(0, 0, 0, 0.16);
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+}
+
+input[type='text'],
+input[type='password'] {
+  border: none;
+  outline: none;
+  width: 60%;
+  padding: 1rem;
+  box-shadow: -1px 3px 15px rgba(0, 0, 0, 0.16);
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+input[type='submit'] {
+  background: var(--primary);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  transition: background 0.3s ease-in-out;
+}
+
+input[type='submit']:hover,
+.arrow:hover {
+  background: rgba(196, 61, 90, 0.89);
+}
+
+.arrow {
+  padding: 1rem 1rem;
+  background: var(--primary);
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+input[type='submit'],
+.arrow {
+  box-shadow: var(--btn-shadow);
+}
+
+.arrow img {
+  width: 20px;
+}
+
+img {
+  user-select: none;
+}
+
+.msg {
+  background: rgba(196, 61, 90, 0.89);
+  border-top: 10px solid rgba(226, 98, 126, 0.9);
+  height: 100%;
+  color: var(--secondary);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  transform-origin: bottom;
+  /* transform: translateY(100%); */
+  animation: error-animate 0.4s ease-in-out;
+}
+
+@keyframes error-animate {
+  0% {
+    transform: scaleY(0);
+    color: rgba(255, 255, 255, 0);
+  }
+  75% {
+    color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scaleY(1);
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 4fr;
+  }
+  header {
+    grid-row: 1 / 3;
+    background-image: url('../images/png/ross-parmly-rf6ywHVkrlY-unsplash.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    /* background-blend-mode: overlay; */
+    background-blend-mode: soft-light;
+  }
+  header img {
+    width: 40%;
+    margin-top: -10em;
+  }
+
+  /* h1 {
+    background: rgba(195, 8, 48, 0.5);
+    padding: 1rem 0;
+    color: #ffffff;
+  } */
+}
+
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  input[type='text'],
+  input[type='password'] {
+    padding: 2.5rem;
+  }
+
+  .control .user-icon {
+    padding: 2.5rem;
+  }
+
+  input[type='submit'] {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .arrow img {
+    width: 30px;
+  }
+
+  input[type='submit'] {
+    padding: 2rem 4rem;
+    font-size: 1.5rem;
+  }
+
+  .arrow {
+    padding: 2rem 2rem;
+  }
+}
